@@ -1,0 +1,319 @@
+/* public/css/evidence1.css - Improved styles for Evidence 1 page */
+
+.evidence1-page {
+    background-image: radial-gradient(rgba(74, 143, 231, 0.05) 2px, transparent 2px);
+    background-size: 30px 30px;
+}
+
+/* Dyslexia experience box */
+.dyslexia-text {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    line-height: 1.8;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #4a8fe7;
+    transition: all 0.3s ease;
+}
+
+.dyslexia-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dyslexia-text p {
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.dyslexia-text p.scrambled {
+    color: #666;
+}
+
+/* Brain development visualization - LEFT ALIGNED AND IMPROVED */
+.brain-development {
+    position: relative;
+    float: left;
+    width: 45%;
+    height: 350px;
+    margin: 0 2rem 2rem 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+
+.brain-visual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background-image: url('/images/brain-icon1.png');
+    background-size: cover;
+    z-index: 2;
+}
+
+/* Pulse effect for the brain */
+.brain-visual::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(74, 143, 231, 0.2);
+    animation: brainPulse 3s infinite ease-in-out;
+}
+
+/* Make neuron paths more meaningful */
+.neuron-path {
+    position: absolute;
+    background-color: #4a8fe7;
+    opacity: 0;
+    height: 4px;
+    border-radius: 2px;
+    animation: growPath 2s forwards;
+    z-index: 1;
+}
+
+/* Create a point of light that travels along each path */
+.neuron-path::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 2px rgba(74, 143, 231, 0.8);
+    top: -2px;
+    left: 0;
+    animation: neuronPulse 3s infinite linear;
+    animation-delay: inherit;
+}
+
+.neuron-path-1 {
+    width: 170px;
+    top: 110px;
+    left: 130px;
+    transform: rotate(30deg);
+    animation-delay: 0.5s;
+}
+
+.neuron-path-2 {
+    width: 180px;
+    top: 190px;
+    left: 130px;
+    transform: rotate(-10deg);
+    animation-delay: 1s;
+}
+
+.neuron-path-3 {
+    width: 150px;
+    top: 70px;
+    left: 130px;
+    transform: rotate(-30deg);
+    animation-delay: 1.5s;
+}
+
+.neuron-path-4 {
+    width: 130px;
+    bottom: 90px;
+    left: 140px;
+    transform: rotate(50deg);
+    animation-delay: 2s;
+}
+
+/* Add neuron endpoint dots */
+.neuron-endpoint {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #4a8fe7;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.endpoint-1 {
+    top: 110px;
+    left: 285px;
+    animation-delay: 2.5s;
+}
+
+.endpoint-2 {
+    top: 190px;
+    left: 305px;
+    animation-delay: 3s;
+}
+
+.endpoint-3 {
+    top: 70px;
+    left: 260px;
+    animation-delay: 3.5s;
+}
+
+.endpoint-4 {
+    bottom: 90px;
+    left: 240px;
+    animation-delay: 4s;
+}
+
+/* Learning pathways cards */
+.learning-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 2rem 0;
+    clear: both; /* Clear the float from brain development */
+}
+
+.learning-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 0.6s forwards;
+    transition: all 0.3s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.learning-card:nth-child(1) {
+    animation-delay: 0.1s;
+    border-top: 3px solid #4a8fe7;
+}
+
+.learning-card:nth-child(2) {
+    animation-delay: 0.3s;
+    border-top: 3px solid #47c9a2;
+}
+
+.learning-card:nth-child(3) {
+    animation-delay: 0.5s;
+    border-top: 3px solid #e75e4a;
+}
+
+.learning-card:nth-child(4) {
+    animation-delay: 0.7s;
+    border-top: 3px solid #8a4ae7;
+}
+
+.learning-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.learning-card-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Enhanced image hover effect */
+.evidence-image-large img {
+    transition: transform 0.5s ease;
+}
+
+.evidence-image-large:hover img {
+    transform: scale(1.02);
+}
+
+/* Improved animations */
+@keyframes brainPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(74, 143, 231, 0.5);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 15px rgba(74, 143, 231, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(74, 143, 231, 0);
+    }
+}
+
+@keyframes neuronPulse {
+    0% {
+        left: 0;
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes growPath {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    .brain-development {
+        float: none;
+        width: 100%;
+        margin: 2rem 0;
+        height: 250px;
+    }
+    
+    .learning-cards {
+        flex-direction: column;
+    }
+    
+    .learning-card {
+        min-width: 100%;
+    }
+    
+    .neuron-path-1, .neuron-path-2, .neuron-path-3, .neuron-path-4 {
+        width: 80px;
+    }
+}
