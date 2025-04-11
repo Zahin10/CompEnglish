@@ -317,3 +317,21 @@
         width: 80px;
     }
 }
+.reference {
+    margin-top: 1.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .reference a {
+    color: #4a8fe7;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .reference a:hover {
+    color: #3a71b0;
+    text-decoration: underline;
+  }
